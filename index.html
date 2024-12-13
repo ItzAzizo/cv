@@ -1,52 +1,158 @@
-<html>
-      <head>
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ePortfolio</title>
+    <style>
+      /* Global styles */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
 
+      h1, h2 {
+        color: #004d99;
+      }
 
-      <title>
-        eprotfolio </title>
-      </head>
+      h1 {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 36px;
+        text-transform: uppercase;
+      }
 
-      <body>
-      <h1>Présentaion</h1>   
+      h2 {
+        margin-top: 20px;
+        font-size: 28px;
+      }
 
-      <h1>Compétences</h1>
-      <h2>Dévleoppemnt</h2>
-      <ul>html</ul>
-      <ul>Python</ul>
-      <ul>Javascript</ul>
-      <ul>CSS</ul>
-        <ul>PHP</ul>
-        <ul>SQL</ul>
-        <ul>GIT/GITHUB</ul>
-    
+      ul {
+        list-style-type: none;
+        padding-left: 0;
+      }
 
-        <h2>Cybersécurité</h2>
+      ul li {
+        margin: 10px 0;
+        font-size: 18px;
+      }
 
-      <h2>Système</h2>
-      <ul>Linux</ul>
-      <ul>Bash</ul>
+      .section {
+        margin: 40px;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
 
-      <h2>Réseaux</h2>
-      <h2>CEJM</h2>
-      <h2></h2>
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 30px;
+      }
 
-      <h2>virtualisation</h2>
-      <ul>Virtualbox</ul>
-      <ul>VMware</ul>
+      .container .section {
+        width: 45%;
+      }
 
-      <h1>certifications</h1>
-      <ul>Pix</ul>
+      .container .section ul li {
+        background-color: #e0e0e0;
+        padding: 8px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
 
-     
+      .section h2 {
+        color: #0073e6;
+        font-size: 24px;
+        text-decoration: underline;
+      }
 
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #004d99;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Mon ePortfolio</h1>
+    </header>
 
+    <div class="container">
+      <!-- Présentation -->
+      <section class="section">
+        <h2>Présentation</h2>
+        <p>Bienvenue sur mon ePortfolio, où je partage mes compétences, mes certifications et mes projets. Découvrez mes domaines d'expertise.</p>
+      </section>
 
-      <h2>langues</h2>
-      <ul>Anglais </ul>
-      <ul>Arabe </ul>
-     
+      <!-- Compétences -->
+      <section class="section">
+        <h2>Compétences</h2>
 
+        <h3>Développement</h3>
+        <ul>
+          <li>HTML</li>
+          <li>Python</li>
+          <li>JavaScript</li>
+          <li>CSS</li>
+          <li>PHP</li>
+          <li>SQL</li>
+          <li>Git/GitHub</li>
+        </ul>
 
+        <h3>Cybersécurité</h3>
+        <ul>
+          <li>Analyse des risques</li>
+          <li>Gestion des vulnérabilités</li>
+          <li>Cryptographie</li>
+        </ul>
 
+        <h3>Système</h3>
+        <ul>
+          <li>Linux</li>
+          <li>Bash</li>
+        </ul>
 
-      </body>
+        <h3>Réseaux</h3>
+        <ul>
+          <li>Configuration de routeurs</li>
+          <li>Gestion de pare-feu</li>
+        </ul>
+
+        <h3>Virtualisation</h3>
+        <ul>
+          <li>VirtualBox</li>
+          <li>VMware</li>
+        </ul>
+      </section>
+
+      <!-- Certifications -->
+      <section class="section">
+        <h2>Certifications</h2>
+        <ul>
+          <li>Pix</li>
+        </ul>
+      </section>
+
+      <!-- Langues -->
+      <section class="section">
+        <h2>Langues</h2>
+        <ul>
+          <li>Anglais</li>
+          <li>Arabe</li>
+        </ul>
+      </section>
+    </div>
+
+    <footer>
+      <p>&copy; 2024 Mon ePortfolio. Tous droits réservés.</p>
+    </footer>
+  </body>
+</html>
