@@ -1,210 +1,354 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ePortfolio</title>
+    <title>CV Aziz Benyamina</title>
     <style>
-      /* Global styles */
-      body {
-        font-family: 'Arial', sans-serif;
-        background-color: #f4f4f9;
-        color: #333;
-        margin: 0;
-        padding: 0;
-      }
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-      h1, h2 {
-        color: #004d99;
-      }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
 
-      h1 {
-        text-align: center;
-        margin-top: 20px;
-        font-size: 36px;
-        text-transform: uppercase;
-      }
+        /* Page de Garde */
+        .home-page {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #232323;
+            color: white;
+        }
 
-      h2 {
-        margin-top: 20px;
-        font-size: 28px;
-      }
+        .home-page h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
 
-      ul {
-        list-style-type: none;
-        padding-left: 0;
-      }
+        .home-page p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
 
-      ul li {
-        margin: 10px 0;
-        font-size: 18px;
-      }
+        .home-page img {
+            width: 50%;
+            max-width: 400px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
 
-      .section {
-        margin: 40px;
-        padding: 20px;
-        background-color: #ffffff;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      }
+        /* Menu */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #232323;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            z-index: 1000;
+            transition: width 0.3s;
+        }
 
-      .container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        padding: 30px;
-      }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
 
-      .container .section {
-        width: 45%;
-      }
+        nav ul li {
+            margin: 20px 0;
+        }
 
-      .container .section ul li {
-        background-color: #e0e0e0;
-        padding: 8px;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
 
-      .section h2 {
-        color: #0073e6;
-        font-size: 24px;
-        text-decoration: underline;
-      }
+        nav ul li a:hover {
+            color: #ffd700;
+        }
 
-      footer {
-        text-align: center;
-        padding: 20px;
-        background-color: #004d99;
-        color: white;
-      }
+        .menu-toggle {
+            cursor: pointer;
+            font-size: 1.5em;
+            color: #fff;
+            display: none;
+            margin-bottom: 20px;
+        }
+
+        /* Content */
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeInContent 1s forwards;
+        }
+
+        @keyframes fadeInContent {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Pages */
+        .page {
+            display: none;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Header */
+        header {
+            background-color: #232323;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header h2 {
+            font-size: 1.4em;
+            font-weight: normal;
+            color: #ffd700;
+        }
+
+        /* Sections */
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #232323;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            margin: 10px 0;
+            color: #444;
+            display: flex;
+            align-items: center;
+        }
+
+        h3 img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin: 10px 0;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        .image-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .image-section img {
+            width: 80%;
+            max-width: 600px;
+            margin: 10px;
+            border-radius: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #232323;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 10px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .content {
+                margin-left: 0;
+                padding: 10px;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            header h2 {
+                font-size: 1.2em;
+            }
+        }
     </style>
-  </head>
-  <body>
-    <header>
-      <h1>Mon ePortfolio</h1>
-    </header>
+</head>
 
-    <div class="container">
-      <!-- Présentation -->
-      <section class="section">
-        <h2>Présentation</h2>
-        <p>Bienvenue sur mon ePortfolio, où je partage mes compétences, mes certifications et mes projets. Découvrez mes domaines d'expertise.</p>
-      </section>
-
-      <!-- Compétences -->
-      <section class="section">
-        <h2>Compétences</h2>
-
-        <h3>Développement</h3>
-        <ul>
-          <li>HTML</li>
-          <li>Python</li>
-          <li>JavaScript</li>
-          <li>CSS</li>
-          <li>PHP</li>
-          <li>SQL</li>
-          <li>Git/GitHub</li>
-        </ul>
-
-        <h3>Cybersécurité</h3>
-        <ul>
-          <li>Analyse des risques</li>
-          <li>Gestion des vulnérabilités</li>
-          <li>Cryptographie</li>
-        </ul>
-
-        <h3>Système</h3>
-        <ul>
-          <li>Linux</li>
-          <li>Bash</li>
-        </ul>
-
-        <h3>Réseaux</h3>
-        <ul>
-          <li>Configuration de routeurs</li>
-          <li>Gestion de pare-feu</li>
-        </ul>
-
-        <h3>Virtualisation</h3>
-        <ul>
-          <li>VirtualBox</li>
-          <li>VMware</li>
-        </ul>
-      </section>
-
-      <!-- Certifications -->
-      <section class="section">
-        <h2>Certifications</h2>
-        <ul>
-          <li>Pix</li>
-        </ul>
-      </section>
-
-      <!-- Langues -->
-      <section class="section">
-        <h2>Langues</h2>
-        <ul>
-          <li>Anglais</li>
-          <li>Arabe</li>
-        </ul>
-      </section>
-
-      <!-- Contact -->
-      <section class="section">
-        <h2>Contact</h2>
-        <ul>
-          <li>06 69 16 24 16</li>
-          <li>Choisy-le-Roi (20 min de Paris)</li>
-          <li>aziz.benyamina94@gmail.com</li>
-        </ul>
-      </section>
-
-      <!-- Expérience -->
-      <section class="section">
-        <h2>Expérience</h2>
-        <ul>
-          <li>Accueil et orientation des clients, conseils dans le choix des produits à partir de leurs critères de recherche</li>
-          <li>Intervention de maintenance, résolution des pannes informatiques</li>
-          <li>Traitement des demandes d'intervention des utilisateurs</li>
-          <li>Assistance technique des utilisateurs à distance</li>
-          <li>Installation des équipements informatiques : PC, imprimantes, points d’accès WiFi</li>
-          <li>Gestion du parc informatique : postes de travail, internet, serveurs</li>
-        </ul>
-      </section>
-
-      <!-- Stages -->
-      <section class="section">
-        <h2>Stages</h2>
-        <ul>
-          <li>Bestocaz Informatique - Paris (mars 2020 - avril 2020)</li>
-          <li>B&L MultiMedia - Paris (mai 2020 - juin 2020)</li>
-          <li>Hôpital Européen de Paris - GVM Care & Research - Aubervilliers (mai - juillet 2021, novembre - décembre 2022)</li>
-          <li>Lycée pro Paul Bert - Maisons-Alfort (janvier 2023 - février 2023)</li>
-        </ul>
-      </section>
-
-      <!-- Formation -->
-      <section class="section">
-        <h2>Formation</h2>
-        <ul>
-          <li>Baccalauréat Professionnel Systèmes Numériques - mention BIEN (2020 - 2023)</li>
-          <li>BTS SIO option SISR - Lycée public Turgot - Paris (2024)</li>
-        </ul>
-      </section>
-
-      <!-- Loisirs -->
-      <section class="section">
-        <h2>Loisirs</h2>
-        <ul>
-          <li>Cuisine</li>
-          <li>Sport (football, musculation)</li>
-          <li>Musique</li>
-        </ul>
-      </section>
+<body>
+    <!-- Page de Garde -->
+    <div class="home-page">
+        <h1>Benyamina-Houari Aziz</h1>
+        <p>Bienvenue sur mon CV  ! Je suis actuellement étudiant en BTS SIO et je cherche un stage en informatique. Découvrez mes compétences et mon parcours ci-dessous.</p>
+        <img src="https://media.tenor.com/bATCOMeLuyYAAAAM/hey-there-jo-jos-bizarre-adventure.gif" alt="Bienvenue">
     </div>
 
+    <!-- Menu -->
+    <nav>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+        <ul>
+            <li><a href="javascript:void(0)" onclick="showPage('contact')">Contact</a></li>
+            <li><a href="javascript:void(0)" onclick="showPage('competences')">Compétences</a></li>
+            <li><a href="javascript:void(0)" onclick="showPage('formation')">Formation</a></li>
+            <li><a href="javascript:void(0)" onclick="showPage('experience')">Expérience</a></li>
+        </ul>
+    </nav>
+
+    <!-- Content -->
+    <div class="content">
+        <!-- Header -->
+        <header>
+            <h1>Benyamina-Houari Aziz</h1>
+            <h2>Étudiant en BTS SIO option SISR | Recherche de stage en Informatique</h2>
+        </header>
+
+        <!-- Pages -->
+        <div id="contact" class="page">
+            <h2>Contact</h2>
+            <p>Téléphone : 06 69 16 24 16</p>
+            <p>Lieu : Choisy-le-Roi (20 min de Paris)</p>
+            <p>Email : aziz.benyamina94@gmail.com</p>
+            <p><strong>Disponible pour un stage en informatique du 12 mai au 4 juillet 2025</strong></p>
+        </div>
+
+        <div id="competences" class="page">
+            <h2>Compétences</h2>
+            <h3><img src="https://e7.pngegg.com/pngimages/686/669/png-clipart-blue-and-white-logo-web-development-responsive-web-design-cascading-style-sheets-html-css-blue-angle-thumbnail.png" alt="HTML & CSS">Développement</h3>
+            <ul>
+                <li>HTML, CSS, PHP, MySQL</li>
+                <li>Conception et développement de projets informatiques</li>
+            </ul>
+
+            <h3><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png" alt="HTML5">Support</h3>
+            <ul>
+                <li>Assistance utilisateur</li>
+                <li>Gestion des incidents et maintenance</li>
+            </ul>
+
+            <h3><img src="https://www.ninjaone.com/wp-content/uploads/elementor/thumbs/N1-0921-Best-Network-Management-Tools-qvjtaq0fhxhzkuuel3xr3mwst5thvoor3jjybjtboy.jpg" alt="Network Management">Systèmes & Réseaux</h3>
+            <ul>
+                <li>Dépannage et maintenance des équipements</li>
+                <li>Gestion du parc informatique</li>
+                <li>Administration des réseaux et serveurs</li>
+            </ul>
+        </div>
+
+        <div id="formation" class="page">
+            <h2>Formation</h2>
+            <div>
+                <h3>BTS Services Informatiques aux Organisations (SISR)</h3>
+                <p>2024 - En cours</p>
+                <p>Lycée public Turgot - Paris</p>
+            </div>
+
+            <div>
+                <h3>Baccalauréat Professionnel Systèmes Numériques - Mention Bien</h3>
+                <p>2020 - 2023</p>
+                <p>Lycée professionnel Paul Bert - Maisons-Alfort</p>
+            </div>
+        </div>
+
+        <div id="experience" class="page">
+            <h2>Expérience</h2>
+            <div>
+                <h3>Stagiaire - Bestocaz Informatique (Paris)</h3>
+                <p>mars 2020 - avril 2020</p>
+                <p>Accueil et orientation des clients, conseils dans le choix des produits. Intervention de maintenance et résolution des pannes informatiques.</p>
+            </div>
+            <div>
+                <h3>Stagiaire - B&L Multimedia (Paris)</h3>
+                <p>mai 2020 - juin 2020</p>
+                <p>Installation des équipements informatiques (PC, imprimantes, points d’accès WiFi). Gestion du parc informatique.</p>
+            </div>
+            <div>
+                <h3>Stagiaire - Hôpital Européen de Paris (Aubervilliers)</h3>
+                <p>mai - juillet 2021</p>
+                <p>Assistance technique des utilisateurs à distance, gestion des incidents et maintenance du matériel informatique.</p>
+            </div>
+            <div>
+                <h3>Stagiaire - Lycée Pro Paul Bert (Maisons-Alfort)</h3>
+                <p>novembre - décembre 2022</p>
+                <p>Traitement des demandes d'intervention des utilisateurs, installation et maintenance des équipements.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
     <footer>
-      <p>&copy; 2024 Mon ePortfolio. Tous droits réservés.</p>
+        <p>© 2025 Benyamina-Houari Aziz | CV en ligne</p>
     </footer>
-  
+
+    <script>
+        // Fonction pour afficher la page cliquée
+        function showPage(pageId) {
+            // Masquer toutes les pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            // Afficher la page sélectionnée
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        // Fonction pour activer/désactiver le menu mobile
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.style.width = nav.style.width === '250px' ? '0' : '250px';
+        }
+
+        // Initialiser la page de contact au démarrage
+        showPage('contact');
+    </script>
+</body>
+
+</html>
